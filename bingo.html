@@ -5,83 +5,137 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartela de Bingo</title>
-    <style>
-        body, html{
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: rgb(224, 224, 224);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        div{
-            background-image: url('cartela.jpg');
-            width: 476px;
-            height: 515px;
-
-        }
-        table {
-            border: 1px solid #666;
-            margin: 13px 13px;
-        }
-        td, th{
-            font-size: 55px;
-            padding: 13px 15px;
-            text-align: center;
-        }
-        </style>
 </head>
-<body>
-        <table>
-    <thead>
-        
-        <tr>
-            <th>B</th>
-            <th>I</th>
-            <th>N</th>
-            <th>G</th>
-            <th>O</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>12</td>
-            <td>4</td>
-            <td>13</td>
-            <td>9</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>23</td>
-            <td>30</td>
-            <td>27</td>
-            <td>19</td>
-        </tr>
-        <tr>
-            <td>31</td>
-            <td>45</td>
-            <td>36</td>
-            <td>42</td>
-            <td>34</td>
-        </tr>
-        <tr>
-            <td>46</td>
-            <td>60</td>
-            <td>51</td>
-            <td>56</td>
-            <td>49</td>
-        </tr>
-        <tr>
-            <td>61</td>
-            <td>75</td>
-            <td>72</td>
-            <td>67</td>
-            <td>65</td>
-        </tr>
+<style>
+    body, html{
+               margin: 0%;
+               padding: 0%;
+               height: 100%;
+               background:rgb(255, 255, 255);
+               display: flex;
+               justify-content: center;
+               align-items: center;
+ }
+     table{ border: 1px; color: rgb(136, 113, 85);
+        margin: 13px 13px;
 
-    </tbody>
+   }
+    td, th{
+        font-size: 55px;
+        padding: 3px 15px;
+        text-align: center;
+        border: 2px solid;
+
+    }
+
+    div{
+        background-image: url('cartela.jng');
+        width: 476px;
+        height: 515px;
+    }
+    img {
+        height: 60px;
+        width: 60px;
+    }
+                                    
+</style>
+<body>
+       <div> 
+        <table>
+            <thead>
+                <tr>
+                     <th>b</th>
+                     <th>i</th>
+                     <th>n</th>
+                     <th>g</th>     
+                     <th>o</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                      <td>4</td>
+                      <td>12</td>
+                      <td>15</td>
+                      <td>9</td>
+                      <td>1</td>
+                  </tr>
+
+                  <tr>
+                      <td>17</td>
+                      <td>21</td>
+                      <td>19</td>
+                      <td>27</td>
+                      <td>30</td>
+                  </tr>
+
+                  <tr>
+                      <td>45</td>
+                      <td>34</td>
+                      <td><img src="/assets/vdds.png" alt=""></td>
+                      <td>39</td>
+                      <td>40</td>
+                  </tr>
+
+                  <tr>
+                      <td>60</td>
+                      <td>51</td>
+                      <td>48</td>
+                      <td>57</td>
+                      <td>52</td>
+                  </tr>
+                  <tr>
+                      <td>75</td>
+                      <td>70</td>
+                      <td>68</td>
+                      <td>61</td>
+                      <td>65</td>
+                  </tr>
+                 
+                 
+                 
+             
+
+                     
         </table>
+    </div>
+
+        <script type="text/javascript">
+            var cartelaB = []; // 1 a 15
+            var cartelaI = []; // 16 a 30
+            var cartelaN = []; // 31 a 45
+            var cartelaG = []; // 46 a 60
+            var cartelaO = []; // 61 a 75
+
+            function GerarArray(NumeroInicial, quantidade) {
+                var retorno = []
+                for (var i = 0; i < quantidade i++)
+            {
+                retorno.push(NumeroInicial)
+                NumeroInicial++;
+            }
+            return retorno
+        }
+        cartelaB = GerarArray(1,15);
+        console.log("Array da cartela B")
+        console.log(cartelaB)
+
+        cartelaB = GerarArray(16, 14);
+        console.log("Array da cartela I")
+        console.log(cartelaI)
+
+        cartelaB = GerarArray(31, 14);
+        console.log("Array da cartela N")
+        console.log(cartelaN)
+
+        cartelaB = GerarArray(46, 14);
+        console.log("Array da cartela G")
+        console.log(cartelaG)
+
+        cartelaB = GerarArray(61, 15);
+        console.log("Array da cartela O")
+        console.log(cartelaO)
+
+            
+        </script>
 </body>
 </html>
