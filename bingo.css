@@ -1,0 +1,30 @@
+body, html{
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+    background:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{ border: 1px; color: rgb(136, 113, 85);
+margin: 13px 13px;
+
+}
+td, th{
+font-size: 55px;
+padding: 3px 15px;
+text-align: center;
+border: 2px solid;
+
+}
+
+div{
+background-image: url('cartela.jng');
+width: 476px;
+height: 515px;
+}
+img {
+height: 60px;
+width: 60px;
+}
