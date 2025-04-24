@@ -54,38 +54,39 @@
         <tbody>
             <tr>
                 <td id="b1" onclick="marcarsorteado('b1', this)">1</td>
-                <td id="i1">17</td>
-                <td id="n1">33</td>
-                <td id="g1">60</td>
-                <td id="o1">64</td>
+                <td id="i1" onclick="marcarsorteado('i1', this)">17</td>
+                <td id="n1" onclick="marcarsorteado('n1', this)">33</td>
+                <td id="g1" onclick="marcarsorteado('g1', this)">60</td>
+                <td id="o1" onclick="marcarsorteado('o1', this)">64</td>
             </tr>
             <tr>
-                <td id="b2">4</td>
-                <td id="i2">22</td>
-                <td id="n2">36</td>
-                <td id="g2">63</td>
-                <td id="o2">68</td>
+                <td id="b2" onclick="marcarsorteado('b2', this)">4</td>
+                <td id="i2" onclick="marcarsorteado('i2', this)">22</td>
+                <td id="n2" onclick="marcarsorteado('n2', this)">36</td>
+                <td id="g2" onclick="marcarsorteado('g2', this)">63</td>
+                <td id="o2" onclick="marcarsorteado('o2', this)">68</td>
             </tr>
             <tr>
-                <td id="b3">9</td>
-                <td id="i3">24</td>
-                <td id="n3">39</td>
-                <td id="g3">65</td>
-                <td id="o3">69</td>
+                <td id="b3" onclick="marcarsorteado('b3', this)">9</td>
+                <td id="i3" onclick="marcarsorteado('i3', this)">24</td>
+                <td id="n3" onclick="marcarsorteado('n3', this)">39</td>
+                <td id="g3" onclick="marcarsorteado('g3', this)">65</td>
+                <td id="o3" onclick="marcarsorteado('o3', this)">69</td>,
+
             </tr>
             <tr>
-                <td id="b4">15</td>
-                <td id="i4">25</td>
-                <td id="n4">41</td>
-                <td id="g4">66</td>
-                <td id="o4">71</td>
+                <td id="b4" onclick="marcarsorteado('b4', this)">15</td>
+                <td id="i4" onclick="marcarsorteado('i4', this)">25</td>
+                <td id="n4" onclick="marcarsorteado('n4', this)">41</td>
+                <td id="g4" onclick="marcarsorteado('g4', this)">66</td>
+                <td id="o4" onclick="marcarsorteado('o4', this)">71</td>
             </tr>
             <tr>
-                <td id="b5">11</td>
-                <td id="i5">28</td>
-                <td id="n5">44</td>
-                <td id="g5">70</td>
-                <td id="o5">75</td>
+                <td id="b5" onclick="marcarsorteado('b5', this)">11</td>
+                <td id="i5" onclick="marcarsorteado('i5', this)">28</td>
+                <td id="n5" onclick="marcarsorteado('n5', this)">44</td>
+                <td id="g5" onclick="marcarsorteado('g5', this)">70</td>
+                <td id="o5" onclick="marcarsorteado('o5', this)">75</td>
             </tr>
             </tbody>
         </table>
@@ -125,7 +126,29 @@
                 var td = document.getElementById("o"+i)
                 td.innerText = cartelaO[i]
             }
+            function NumeroAleatorio(numeroMinimo, numeroMaximo) {
+                var retorno = math.floor(math.ramdom() * numeroMaximo)
+                if (retorno > 0 && retorno >= numeroMinimo && retorno <= numeroMaximo) {
+                    return retorno
+                }
+                return NumeroAleatorio(numeroMinimo, numeroMaximo)
+            }
         }
+
+        function MisturarArray(array) {
+            var aleatorio
+            var cont = array.length
+            var auxiliar
+            while (cont != 0) {
+                aleatorio = NumeroAleatorio(1, array.length)
+                cont--
+                auxiliar = array[cont]
+                array[cont] = array[aleatorio]
+                array[aleatorio] = auxiliar                
+            }
+            return array
+        }
+    
 
         function GerarArray(NumeroInicial, quantidade) {
             var retorno = []
@@ -135,23 +158,23 @@
             }
             return retorno
         }
-        cartelaB = GerarArray(1,15);
+        cartelaB = MisturarArray(GerarArray(1,15));
         console.log("Array da Coluna B");
         console.log(cartelaB);
 
-        cartelaI = GerarArray(16,15);
+        cartelaI = MisturarArray(GerarArray(16,15));
         console.log("Array da Coluna I");
         console.log(cartelaI);
 
-        cartelaN = GerarArray(31,15);
+        cartelaN = MisturarArray(GerarArray(31,15));
         console.log("Array da Coluna N");
         console.log(cartelaN);
 
-        cartelaG = GerarArray(46,15);
+        cartelaG = MisturarArray(GerarArray(46,15));
         console.log("Array da Coluna G");
         console.log(cartelaG);
 
-        cartelaO = GerarArray(61,15);
+        cartelaO = MisturarArray(GerarArray(61,15));
         console.log("Array da Coluna O");
         console.log(cartelaO);
 
